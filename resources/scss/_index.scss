@@ -1,0 +1,1476 @@
+.top-site {
+    background-image: linear-gradient(to bottom, rgba(229, 239, 255, 1), rgba(229, 239, 255, 0.26), rgba(229, 239, 255, 0));
+    &__background {
+        background-image: url(../img/images/top-site-background.png);
+        background-repeat: no-repeat;
+        background-position-x: 100%;
+        background-position-y: top;
+        background-size: 50%;
+    }
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 55px 0;
+    position: relative;
+    &__item-flex {
+        display: flex;
+    }
+    &__logo {
+        display: block;
+        width: 169px;
+        margin-right: 144px;
+        img {
+            width: 100%
+        }
+    }
+    &__nav-list {
+        flex: 1;
+    }
+    &__nav-item {
+        margin-right: 38px;
+        &:last-child {
+            margin-right: 0;
+        }
+        a {
+            font-weight: 500;
+            line-height: map-get($lineheight, 21);
+            transition: all 0.25s ease;
+            &:hover {
+                color: map-get($color, 2);
+            }
+        }
+    }
+    &__user-and-search {
+        align-items: center;
+    }
+    &__user-list {
+        margin-right: 30px;
+        align-items: center;
+    }
+    &__user-item {
+        margin-right: 38px;
+        a {
+            font-weight: 500;
+            line-height: map-get($lineheight, 21);
+            transition: all 0.25s ease;
+            &:hover {
+                color: map-get($color, 2);
+            }
+        }
+        &:last-child {
+            margin-right: 0;
+            a {
+                &:hover {
+                    color: map-get($color, 9);
+                }
+            }
+        }
+    }
+    &__user-get-started {
+        a {
+            text-align: center;
+            display: inline-block;
+            width: 120px;
+            background-color: map-get($color, 2);
+            color: map-get($color, 9);
+            padding: 13px 14px;
+            border-radius: 5px;
+            transition: all 0.25s ease;
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+    &__mobile-icon {
+        font-size: 25px;
+    }
+    &__search-icon {
+        cursor: pointer;
+    }
+    &__search-container {
+        position: fixed;
+        left: 100%;
+        right: -100%;
+        height: 50px;
+        display: flex;
+        padding: 0 50px;
+        transition: all 0.25s ease;
+        transform-origin: right 0;
+        margin-top: 5px;
+        z-index: 999;
+        &--active {
+            left: 0;
+            right: 0;
+        }
+    }
+    &__search-input {
+        flex: 1;
+        outline: none;
+        border: 0;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+    &__search-btn {
+        outline: none;
+        background-color: map-get($color, 1);
+        cursor: pointer;
+        border: 0;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        color: map-get($color, 9);
+        font-weight: 700;
+    }
+    &__user-mobile-icon {
+        display: none;
+        cursor: pointer;
+    }
+    &__mobile-menu-icon {
+        display: none;
+        cursor: pointer;
+        padding: 10px;
+    }
+    @include max-width(1220px) {
+        &__logo {
+            margin-right: 50px;
+        }
+    }
+    @include max-width(1140px) {
+        padding: 10px;
+        &__logo {
+            margin-right: 0;
+        }
+        &__nav-list {
+            display: none;
+        }
+        &__search-container {
+            padding: 0 15px;
+        }
+        &__mobile-menu-icon {
+            display: block;
+        }
+    }
+    @include max-width(720px) {
+        &__logo {
+            margin-right: 0;
+        }
+        &__user-list {
+            display: none;
+        }
+        &__user-mobile-icon {
+            display: block;
+        }
+    }
+    @include max-width(320px) {
+        &__logo {
+            width: 120px;
+        }
+    }
+}
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -100%;
+    width: 225px;
+    background-color: map-get($color, 9);
+    padding: 10px;
+    transition: all 0.25s ease;
+    transform-origin: left 0;
+    z-index: 999;
+    &--active {
+        left: 0;
+    }
+    &__logo {
+        width: 169px;
+        margin: 0 auto;
+        img {
+            width: 100%;
+        }
+    }
+    &__list {
+        margin-top: 30px;
+    }
+    &__item {
+        margin-bottom: 10px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        a {
+            font-weight: 500;
+            display: block;
+            padding: 10px;
+        }
+    }
+}
+.mobile-menu-background {
+    position: fixed;
+    top: -100%;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.384);
+    z-index: 995;
+    transition: all 0.25s ease;
+    &--active {
+        top: 0;
+        bottom: 0;
+    }
+}
+.user-mobile {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    bottom: 0;
+    width: 225px;
+    background-color: map-get($color, 9);
+    padding: 10px;
+    transition: all 0.25s ease;
+    z-index: 999;
+    &__title {
+        font-size: map-get($fontsize, 20);
+        text-align: center;
+        color: map-get($color, 1);
+        font-weight: 700;
+    }
+    &__item {
+        display: block;
+    }
+    &__label {
+        display: block;
+        font-size: map-get($fontsize, 14);
+        color: map-get($color, 1);
+        margin-top: 15px;
+        font-weight: 700;
+        span {
+            color: red;
+        }
+    }
+    &__input {
+        height: 50px;
+        outline: none;
+        width: 100%;
+        font-size: map-get($fontsize, 16);
+        border: 1px solid map-get($color, 1);
+    }
+    &__btn {
+        display: block;
+        width: 100%;
+        line-height: 40px;
+        border: 1px solid map-get($color, 1);
+        background-color: map-get($color, 9);
+        cursor: pointer;
+        font-size: map-get($fontsize, 14);
+        color: map-get($color, 1);
+        transition: all 0,25s ease;
+        margin: 10px auto;
+        text-transform: uppercase;
+        font-weight: 700;
+        transition: all 0.25s ease;
+        &:hover {
+            background-color: map-get($color, 2);
+            color: map-get($color, 9);
+            border-color: map-get($color, 9);
+        }
+    }
+    &__loss-password {
+        font-size: map-get($fontsize, 18);
+        padding: 10px 0;
+        margin-bottom: 10px;
+        transition: all 0.25s ease;
+        &:hover {
+            color: map-get($color, 2);
+        }
+    }
+    &__get-started {
+        padding: 10px 0;
+        width: 100%;
+        text-align: center;
+        background-color: map-get($color, 2);
+        color: map-get($color, 9);
+        line-height: 50px;
+        font-size: map-get($fontsize, 18px);
+        font-weight: 700;
+        border-radius: 5px;
+        transition: all 0.25s ease;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+    &--active {
+        right: 0;
+    }
+}
+.hero {
+    margin-top: 200px;
+    &__box {
+        display: flex;
+    }
+    &__left {
+        flex: 1;
+        padding-left: 138px;
+        margin-right: 45px;
+    }
+    &__right {
+        flex: 1;
+        img {
+            width: 100%;
+            transform: translateY(-10%);
+        }
+    }
+    &__title {
+        font-size: map-get($fontsize, 85);
+        line-height: map-get($lineheight, 95);
+        font-weight: 700;
+    }
+    &__paragraph {
+        font-size: map-get($fontsize, 18);
+        line-height: map-get($lineheight, 25);
+        color: map-get($color, 10);
+    }
+    &__left-item {
+        margin-bottom: 30px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &__btn {
+        display: inline-block;
+        width: 267px;
+        height: 72px;
+        padding: 26px 63px 25px 62px;
+        background-color: map-get($color, 2);
+        border-radius: 60px;
+        color: map-get($color, 9);
+        font-weight: 500;
+        line-height: map-get($lineheight, 21);
+        margin-right: 12px;
+        transition: all 0.25s ease;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+    &__text-style {
+        display: inline-block;
+        line-height: map-get($lineheight, 25);
+        color: map-get($color, 10);
+        margin-right: 5px;
+    }
+    &__text-link {
+        font-size: map-get($fontsize, 22);
+        font-weight: 700;
+        line-height: map-get($lineheight, 25);
+        color: map-get($color, 3);
+        transition: all 0.25s ease;
+        &:hover {
+            color: map-get($color, 2);
+        }
+    }
+    @include max-width(1770px) {
+        &__title {
+            font-size: map-get($fontsize, 70);
+            line-height: map-get($lineheight, 85);
+        }
+    }
+    @include max-width (1440px) {
+        &__title {
+            font-size: map-get($fontsize, 60);
+            line-height: map-get($lineheight, 75);
+        }
+    }
+    @include max-width (1220px) {
+        &__title {
+            font-size: map-get($fontsize, 45);
+            line-height: map-get($lineheight, 60);
+        }
+        &__left-link-list {
+            display: flex;
+            flex-direction: column;
+        }
+        &__btn {
+            width: 200px;
+            height: 50px;
+            padding: 15px 37px;
+            margin-bottom: 5px;
+            margin-right: 0;
+            border-radius: 5px;
+        }
+    }
+    @include max-width (1024px) {
+        margin-top: 75px;
+        &__left {
+            padding-left: 15px;
+        }
+    }
+    @include max-width (880px) {
+        &__title {
+            font-size: map-get($fontsize, 24);
+            line-height: map-get($lineheight, 30);
+            margin-bottom: 15px;
+        }
+        &__paragraph {
+            font-size: map-get($fontsize, 16);
+            margin-bottom: 15px;
+        }
+        &__text-link {
+            font-size: map-get($fontsize, 16);
+        }
+    }
+    @include max-width(680px) {
+        &__box {
+            flex-direction: column-reverse;
+        }
+    }
+}
+.features {
+    &__title {
+        font-family: 'Circular Std';
+        font-weight: 700;
+        font-size: map-get($fontsize, 55);
+        line-height: map-get($lineheight, 70);
+        text-align: center;
+    }
+    &__list {
+        --column: 3;
+        --empty: 35px;
+        display: flex;
+        justify-content: space-around;
+        margin-top: 56px;
+    }
+    &__item {
+        width: calc(calc(100% / var(--column)) - calc(2 * var(--empty)));
+        &:nth-child(1) {
+            margin-top: 25px;
+        }
+        &:nth-child(2) {
+            margin-top: 100px;
+        }
+        &:nth-child(3) {
+            margin-top: 175px;
+        }
+    }
+    &__item-image {
+        img {
+            width: 100%;
+        }
+    }
+    &__item-meta {
+        max-width: 430px;
+        width: 100%;
+        h2 {
+            font-weight: 700;
+            font-size: map-get($fontsize, 36);
+            line-height: map-get($lineheight, 70);
+        }
+        p{
+            line-height: map-get($lineheight, 30);
+            color: map-get($color, 10);
+        }
+    }
+    &__btn {
+        margin-top: 25px;
+        display: block;
+        font-size: map-get($fontsize, 22);
+        font-weight: 700;
+        line-height: map-get($lineheight, 25);
+        color: map-get($color, 3);
+    }
+    @include max-width (1280px){
+        &__item-meta {
+            h2 {
+                font-size: map-get($fontsize, 27);
+                line-height: map-get($lineheight, 40);
+            }
+        }
+    }
+    @include max-width (1024px) {
+        margin-top: 25px;
+        &__list {
+            --empty: 10px;
+            margin-top: 25px;
+        }
+        &__btn {
+            font-size: map-get($fontsize, 18);
+        }
+    }
+    @include max-width (880px) {
+        &__title {
+            font-size: map-get($fontsize, 35);
+            line-height: map-get($lineheight, 50);
+        }
+        &__item-meta {
+            h2 {
+                font-size: map-get($fontsize, 20);
+                line-height: map-get($lineheight, 30);
+            }
+            p {
+                font-size: map-get($fontsize, 14);
+                line-height: map-get($lineheight, 25);
+            }
+        }
+    }
+    @include max-width (680px) {
+        &__list {
+            --column: 1;
+            --empty: 0;
+            flex-wrap: wrap;
+            padding: 0 15px;
+        }
+        &__item {
+            &:nth-child(1) {
+                margin-top: 0;
+            }
+            &:nth-child(2) {
+                margin-top: 20px;
+            }
+            &:nth-child(3) {
+                margin-top: 20px;
+            }
+        }
+    }
+}
+.documentation {
+    background-image: url(../img/images/documentation-background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    margin-top: 150px;
+    &__background {
+        background-image: url(../img/images/woo.png);
+        background-position-x: right;
+        background-position-y: -5%;
+        background-repeat: no-repeat;
+        background-size: 35%;
+    }
+    &__container {
+        position: relative;
+    }
+    &__item {
+        position: relative;
+        display: flex;
+        z-index: 2;
+    }
+    &__image {
+        max-width: 430px;
+        width: 100%;
+        img {
+            width: 100%;
+        }
+    }
+    &__meta {
+        max-width: 480px;
+        width: 100%;
+    }
+    &__title {
+        font-size: map-get($fontsize, 36);
+        font-weight: 700;
+        line-height: map-get($lineheight, 46);
+        color: map-get($color, 9);
+        margin-bottom: 13px;
+    }
+    &__paragraph {
+        line-height: map-get($lineheight, 30);
+        color: map-get($color, 9);
+        margin-bottom: 39px;
+    }
+    &__btn {
+        display: block;
+        text-align: center;
+        width: 256px;
+        height: 64px;
+        padding: 22px 26px 21px;
+        background-color: map-get($color, 5);
+        border-radius: 60px;
+        color: map-get($color, 9);
+        font-weight: 500;
+        line-height: map-get($lineheight, 21);
+        transition: all 0.25s ease;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+    &__develop {
+        transform: translateY(-10%);
+    }
+    &__develop-meta {
+        transform: translateY(20%);
+        margin-left: 70px;
+    }
+    &__comunity {
+        flex-direction: row-reverse;
+        transform: translateY(10%);
+    }
+    &__comunity-meta {
+        transform: translateY(10%);
+        margin-right: 70px;
+    }
+    &__circle {
+        display: block;
+        border: 5px solid map-get($color, 4);
+        border-radius: 50%;
+        position: absolute;
+    }
+    &__circle-one {
+        width: 65px;
+        height: 65px;
+        top: 10%;
+        left: -8%;
+    }
+    &__circle-two {
+        width: 401px; 
+        height: 401px;
+        top: 8%;
+        left: -3%;
+    }
+    &__circle-three {
+        width: 65px;
+        height: 65px;
+        top: 54%;
+        right: 22%;
+        z-index: 3;
+    }
+    &__circle-four {
+        width: 265px;
+        height: 265px;
+        bottom: 19%;
+        right: -4%;
+    }
+    &__dots-one {
+        position: absolute;
+        top: 28%;
+        left: -1%;
+        @include generateDot(7.05px, map-get($color, 5), 44.63, 10, 5);
+    }
+    &__dots-two {
+        position: absolute;
+        bottom: 22%;
+        right: 4%;
+        @include generateDot(7.05px, map-get($color, 5), 44.63, 5, 5);
+    }
+    @include max-width(1550px) {
+        &__develop-meta {
+            margin-left: 30px;
+        }
+        &__comunity-meta {
+            margin-right: 30px;
+        }
+        &__circle-one {
+            top: 5%;
+            left: 0;
+        }
+        &__circle-two {
+            top: 9%;
+            left: 0%;
+        }
+        &__circle-four {
+            right: 0;
+        }
+        &__dots-one {
+            left: 0;
+        }
+        &__dots-two {
+            right: 11%;
+        }
+    } 
+    @include max-width(1280px) {
+        &__circle-four {
+            bottom: 27%; 
+        }
+    }
+    @include max-width(1140px) {
+        &__develop-meta {
+            margin-left: 20px;
+        }
+        &__comunity-meta {
+            margin-right: 20px;
+        }
+        &__circle-three {
+            top: 47%;
+            right: 26%;
+        }
+    }
+    @include max-width (880px) {
+        margin-top: 75px;
+        &__title {
+            font-size: map-get($fontsize, 24);
+            line-height: map-get($lineheight, 30);
+        }
+        &__paragraph {
+            font-size: map-get($fontsize, 14);
+            line-height: map-get($lineheight, 22);
+        }
+        &__circle {
+            display: none;
+        }
+        &__dots {
+            display: none;
+        }
+    }
+    @include max-width (680px) {
+        &__item {
+            flex-direction: column;
+        }
+        &__title {
+            br {
+                display: none;
+            }
+        }
+        &__develop {
+            transform: unset;
+            margin-bottom: 20px;
+        }
+        &__comunity {
+            margin-top: 20px;
+            transform: unset;
+        }
+        &__develop-meta {
+            transform: unset;
+            margin-left: unset;
+        }
+        &__comunity-meta {
+            transform: unset;
+        }
+        &__btn {
+            border-radius: 5px;
+        }
+    }
+}
+.customer {
+    padding-top: 206px;
+    background-image: linear-gradient(to bottom, rgba(237, 240, 253, 0), rgba(237, 240, 253, 0.53), rgba(237, 240, 253, 1), rgba(237, 240, 253, 0.43), rgba(237, 240, 253, 0));
+    position: relative;
+    &__relative {
+        position: relative;
+    }
+    &__title {
+        font-size: map-get($fontsize, 55);
+        font-weight: 700;
+        line-height: map-get($lineheight, 70);
+        text-align: center;
+        margin-bottom: 103px;
+    }
+    &__slide-container {
+        max-width: 730px;
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+        border-radius: 20px;
+    }
+    &__slide {
+        background-color: map-get($color, 9);
+        position: relative;
+        z-index: 3;
+        border-radius: 20px;
+        box-shadow: 0px 15px 58px 0px rgb(215 228 249 / 50%);
+        .slick-arrow {
+            top: 500px;
+            &:hover {
+                &::before {
+                    font-size: 32px;
+                    color: map-get($color, 1);
+                }
+            }
+            &::before {
+                font-family: 'FontAwesome';
+                color: map-get($color, 10);
+                font-size: map-get($fontsize, 27);
+                line-height: map-get($lineheight, 40);
+                padding: 10px;
+                transition: all 0.2s ease;
+            }
+        }
+        .slick-prev {
+            left: 80%;
+            &::before {
+                content: '\f177';
+                margin-right: 10px;
+            }
+        }
+        .slick-next { 
+            right: 10%;
+            &::before {
+                content: '\f178'
+            }
+        }
+    }
+    &__slide-item {
+        p {
+            font-size: 26.7px;
+            line-height: map-get($lineheight, 40);
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            transform: translateY(-35%);
+            padding: 0 82px;
+        }
+    }
+    &__slide-background-image {
+        position: relative;
+        z-index: 1;
+        margin: 0 auto;
+        width: 234px;
+        transform: translateY(16%);
+        img {
+            width: 100%;
+        }
+    }
+    &__item-absolute {
+        position: absolute;
+        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.75);
+        margin: 0 auto;
+        left: 50%;
+        transform: translateX(-50%);
+        box-shadow: 0px 15px 58px 0px rgb(215 228 249 / 50%);
+    }
+    &__item-absolute-one {
+        width: 90%;
+        height: 100%;
+        top: 5%;
+        z-index: 2;
+    }   
+    &__item-absolute-two {
+        width: 80%;
+        height: 100%;
+        top: 10%;
+        z-index: 1;
+    }
+    &__image {
+        position: absolute;
+        z-index: 3;
+        width: 154px;
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    &__image-top-left {
+        width: 136px;
+        top: 15%;
+        left: 10%;
+    }
+    &__image-middle-left {
+        width: 93px;
+        top: 62%;
+        left: 1%;
+    }
+    &__image-bottom-left {
+        width: 105px;
+        bottom: -20%;
+        left: 8%;
+    }
+    &__image-top-right {
+        width: 94px;
+        top: 10%;
+        right: 15%;
+    }
+    &__image-middle-right {
+        top: 57%;
+        right: 2%;
+    }
+    &__image-bottom-right {
+        width: 89px;
+        bottom: -30%;
+        right: 15%;
+    }
+    &__dots {
+        position: absolute;
+    }
+    &__dots-top-right {
+        @include generateDot (7.05px, map-get($color, 6,), 44.63, 5, 10);
+        right: 44%;
+        top: 43%;  
+    }
+    &__dots-bottom-left {
+        @include generateDot (7.05px, map-get($color, 5,), 44.63, 5, 10);
+        left: 16.5%;
+        bottom: 13%; 
+    }
+    @include max-width(1280px) {
+        &__image-bottom-left {
+            left: 4%;
+        }
+        &__image-middle-right {
+            right: 0;
+        }
+        &____dots-bottom-left {
+            left: 13.5%;
+            bottom: 13%;
+        }
+    }
+    @include max-width(1140px) {
+        &__slide {
+            .slick-arrow {
+                top: 450px;
+            }
+            .slick-prev {
+                left: 70%;
+            }
+            .slick-next {
+                right: 20%;
+            }
+        }
+        &__image {
+            width: 70px;
+        }
+        &__image-top-right {
+            top: 15%;
+            right: 10%;
+        }
+        &__image-middle-right {
+            right: 1%;
+        }
+        &__image-bottom-right {
+            right: 10%;
+        }
+        &__image-bottom-left {
+            left: 5%;
+        }
+    }
+    @include max-width(880px) {
+        padding-top: 106px;
+        &__title {
+            margin-bottom: 53px;
+        }
+        &__image {
+            display: none;
+        }
+        &__dots {
+            display: none;
+        }
+    }
+    @include max-width(720px) {
+        &__slide {
+            .slick-arrow {
+                top: 485px;
+            }
+        }
+    }
+    @include max-width(680px) {
+        &__title {
+            font-size: map-get($fontsize, 27);
+            line-height: map-get($lineheight, 40);
+            margin-bottom: 20px;
+        }
+        &__slide {
+            .slick-arrow {
+                top: 440px;
+            }
+            .slick-prev {
+                left: 65%;
+            }
+        }
+        &__slide-item {
+            p {
+                font-size: map-get($fontsize, 22);
+                padding: 0 20px;
+            }
+        }
+    }
+    @include max-width(480px) {
+        padding-top: 50px;
+        &__title {
+            font-size: map-get($fontsize, 27);
+            line-height: map-get($lineheight, 40);
+            margin-bottom: 20px;
+        }
+        &__slide {
+            .slick-arrow {
+                top: 355px;
+            }
+            .slick-prev {
+                left: 60%;
+            }
+        }
+        &__slide-item {
+            p {
+                padding: 0 10px;
+                font-size: map-get($fontsize, 16);
+                line-height: map-get($lineheight, 30);
+            }
+        }
+        &__slide-background-image {
+            width: 50%;
+        }
+    }
+    @include max-width(320px) {
+        &__slide-item {
+            p {
+                padding: 0px 5px;
+                font-size: map-get($fontsize, 12);
+            }
+        }
+        &__slide {
+            .slick-arrow {
+                top: 285px;
+            }
+            .slick-prev {
+                left: 57%;
+            }
+        }
+    }
+
+}
+.support {
+    margin-top: 354px;
+    &__container {
+        position: relative;
+    }
+    &__title {
+        text-align: center;
+        font-weight: 700;
+        font-size: map-get($fontsize, 55);
+        line-height: map-get($lineheight, 70);
+    }
+    &__paragraph {
+        text-align: center;
+        margin-top: 31px;
+        line-height: map-get($lineheight, 25);
+        color: map-get($color, 10);
+    }
+    &__image {
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        img {
+            width: 90%;
+            position: relative;
+            z-index: 2;
+            transform: translateY(1%);
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 100%;
+            top: 60%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: map-get($color, 11);
+            height: 100%;
+            z-index: 1;
+            border-top-left-radius: 50%;
+            border-top-right-radius: 50%;
+        }
+    }
+    &__dots {
+        position: absolute;
+    }
+    &__dots-left {
+        @include generateDot(7.05px, map-get($color, 5), 44.63, 5, 10);
+        top: 91%;
+        left: -11%;
+    }
+    &__dots-right {
+        @include generateDot(7.05px, map-get($color, 6), 44.63, 3, 5);
+        top: 69%;
+        right: 8.5%;
+    }
+    &__circle {
+        display: block;
+        position: absolute;
+        border: 5px solid map-get($color, 4);
+        border-radius: 50%;
+    }
+    &__circle-top-left {
+        width: 61.18px;
+        height: 61.18px;
+        top: 53%;
+        left: -10%;
+    }
+    &__circle-bottom-left {
+        width: 34px;
+        height: 34px;
+        top: 80%;
+        left: -0.5%;
+    }
+    &__circle-top-right {
+        width: 43px;
+        height: 43px;
+        top: 45%;
+        right: 4.75%;
+    }
+    @include max-width (1750px){
+        &__circle-top-left {
+            left: -7%;
+        }
+    }
+    @include max-width(1550px) {
+        &__circle-top-left {
+            left: -2%;
+        }
+        &__circle-bottom-left {
+            left: 0;
+        }
+    }
+    @include max-width(1424px) {
+        &__image {
+            img {
+                width: 80%;
+            }
+            &::after {
+                width: 90%;
+            }
+        }
+        &__dots-left {
+            left: 0;
+        }
+        &__dots-right {
+            right: 14.5%;
+        }
+        &__circle-top-left {
+            left: 0;
+        }
+        &__circle-bottom-left {
+            left: 3.5%;
+        }
+        &__circle-top-right {
+            right: 8.75%;
+        }
+    }
+    @include max-width(880px) {
+        margin-top: 154px;
+    }
+    @include max-width(720px) {
+        &__circle-top-left {
+            top: 45%;
+        }
+        &__circle-bottom-left {
+            top: 70%;
+        }
+        &__circle-top-right {
+            right: 0;
+        }
+    }
+    @include max-width(680px) {
+        &__title {
+            font-size: map-get($fontsize, 27);
+            line-height: map-get($lineheight, 40);
+        }
+        &__paragraph {
+            margin-top: 15px;
+            font-size: map-get($fontsize, 12);
+            line-height: map-get($lineheight, 22);
+            br {
+                display: none;
+            }
+        }
+        &__dots {
+            display: none;
+        }
+        &__circle {
+            display: none;
+        }
+        &__image {
+            img {
+                transform: translateY(6%);
+                width: 100%;
+            }
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+}
+.platform {
+    background-color: map-get($color, 8);
+    position: relative;
+    z-index: 3;
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 94px 64px 95px;
+    }
+    &__paragraph {
+        flex: 1;
+        font-size: map-get($fontsize, 36);
+        line-height: map-get($lineheight, 53);
+        color: map-get($color, 9);
+        margin-right: 67px;
+        span {
+            font-weight: 700;
+        }
+    }
+    &__btn {
+        display: inline-block;
+        border: 2px solid map-get($color, 9);
+        border-radius: 60px;
+        padding: 26px 46px 25px;
+        text-align: center;
+        color: map-get($color, 9);
+        line-height: map-get($lineheight, 21);
+        font-size: map-get($fontsize, 18);
+        transition: all 0.25s ease;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+    &__circle {
+        width: 89px;
+        height: 88px;
+        border-radius: 50%;
+        border: 5px solid map-get($color, 4);
+        position: absolute;
+        bottom: -7%;
+        right: 2%;
+    }
+    @include max-width(1024px) {
+        &__container {
+            padding: 45px 64px;
+        }
+        &__paragraph {
+        margin-right: 30px;
+        font-size: map-get($fontsize, 22);
+        line-height: map-get($lineheight, 30);
+        }
+        &__circle {
+            width: 50px;
+            height: 50px;
+        }
+    }
+    @include max-width(880px) {
+        &__container  {
+            padding: 30px 45px;
+        }
+        &__paragraph {
+            font-size: map-get($fontsize, 16);
+        }
+        &__btn {
+            padding: 15px 25px;
+            font-size: map-get($fontsize, 14);
+        }
+        &__circle {
+            bottom: -20px;
+        }
+    }
+    @include max-width(680px) {
+        &__container {
+            padding: 30px 15px;
+        }
+        &__paragraph {
+            font-size: map-get($fontsize, 14);
+        }
+        &__circle {
+            display: none;
+        }
+    }
+    @include max-width(480px) {
+        &__container {
+            flex-direction: column;
+            padding: 10px 0;
+        }
+        &__paragraph {
+            margin-right: 0;
+            text-align: center;
+            font-size: map-get($fontsize, 14);
+            line-height: map-get($lineheight, 25);
+            margin-bottom: 10px;
+        }
+        &__btn {
+            padding: 10px 20px;
+            font-size: map-get($fontsize, 12);
+        }
+        &__circle {
+            display: none;
+        }
+    }
+}
+.footer {
+    position: relative;
+    z-index: 2;
+    background-color: map-get($color, 2);
+    padding-top: 45px;
+    padding-bottom: 64px;
+    &__top {
+        margin-bottom: 135px;
+    }
+    &__top-list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__top-item {
+        display: flex;
+        align-items: center;
+        .item-image {
+            display: block;
+            width: 41px;
+            margin-right: 15px;
+            img {
+                width: 100%;
+            }
+        }
+        p {
+            color: map-get($color, 9);
+            font-size: map-get($fontsize, 20);
+            line-height: map-get($lineheight, 53);
+            span {
+                font-weight: 700;
+            }
+        }
+    }
+    &__middle-logo {
+        width: 183.5px;
+        margin: 0 auto;
+        margin-bottom: 56px;
+        img {
+            width: 100%;
+        }
+    }
+    &__middle-link {
+        border-top: 1px solid map-get($color, 12);
+        padding-top: 34px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    &__middle-link-title {
+        font-weight: 700;
+        font-size: map-get($fontsize, 14);
+        line-height: map-get($lineheight, 53);
+        color: map-get($color, 9);
+    }
+    &__middle-link-item {
+        a {
+            font-size: map-get($fontsize, 12);
+            line-height: map-get($lineheight, 22);
+            color: map-get($color, 9);
+            padding: 5px 0;
+            transition: all 0,25s ease;
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+    @include max-width(1024px) {
+        &__top {
+            margin-bottom: 75px;
+        }
+        &__top-item {
+            .item-image {
+                width: 35px;
+            }
+            p {
+                font-size: map-get($fontsize, 16);
+                line-height: map-get($lineheight, 30);
+            }
+        }
+    }
+    @include max-width(880px) {
+        &__top-item {
+            .item-image {
+                width: 25px;
+                margin-right: 5px;
+            }
+            p {
+                font-size: map-get($fontsize, 14);
+            }
+        }
+    }
+    @include max-width(680px) {
+        padding: 25px 0;
+        &__top {
+            margin-bottom: 30px;
+        }
+        &__top-list {
+            display: block;
+            width: 60%;
+            margin: 0 auto;
+        }
+        &__top-item {
+            margin-bottom: 10px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            .item-image {
+                width: 20px;
+            }
+            p {
+                font-size: map-get($fontsize, 12);
+                line-height: map-get($lineheight, 22);
+            }
+        }
+        &__middle-logo {
+            margin-bottom: 20px;
+        }
+        &__middle-link {
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            padding-top: 0;
+        }
+        &__middle-link-container {
+            padding: 10px;
+        }
+    }
+}
+.meta-and-copyright {
+    padding: 29px 0 25px;
+    &__box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__social-list {
+        display: flex;
+        align-items: center;
+    }
+    &__social-item {
+        margin-right: 54px;
+        a {
+            display: block;
+            width: 20px;
+            transition: all 0.25s ease;
+            img {
+                width: 100%;
+            }
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+    &__text {
+        font-size: map-get($fontsize, 12);
+        line-height: map-get($lineheight, 22);
+        text-align: center; 
+        a {
+            text-decoration: underline;
+        }
+    }
+    &__logo {
+        display: block;
+        width: 183px;
+        img {
+            width: 100%;
+        }
+    }
+    @include max-width(880px) {
+        &__social-item {
+            margin-right: 10px;
+            a {
+                padding: 5px;
+            }
+        }
+        &__text {
+            margin-right: 15px;
+        }
+    }
+    @include max-width(720px) {
+        &__box {
+            flex-direction: column;
+            align-items: center;
+        }
+        &__social-list {
+            order: 2;
+            padding: 5px 0;
+        }
+        &__text {
+            order: 3;
+            margin-right: 0;
+        } 
+        &__logo {
+            order: 1;
+        }
+    }
+}

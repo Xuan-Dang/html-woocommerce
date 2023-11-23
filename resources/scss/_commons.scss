@@ -1,0 +1,53 @@
+@font-face {
+    font-family: 'Circular Std';
+    src: url(../font/FontsFree-Net-CircularStd-Black.ttf);
+    src: url(../font/FontsFree-Net-CircularStd-Bold.ttf);
+}
+$maxwidth: 1430px;
+$titleFontWeight: 700;
+$normalFontWeight: 500;
+$color: (
+    1: #272D4E,
+    2: #7854F7,
+    3: #299EF3,
+    4: #FFBA49,
+    5: #70C217,
+    6: #EF4358,
+    8: #5F37EF,
+    9: #FFFFFF,
+    10: #94A2B3,
+    11: #EEEEEE,
+    12: #9a7dff,
+);
+$fontsize: (
+    12: 0.75rem,
+    14: 0.875rem,
+    16: 1rem,
+    18: 1.125rem,
+    20: 1.25rem,
+    22: 1.375rem,
+    24: 1.5rem,
+    27: 1.66875rem,
+    35: 2.1875rem,
+    36: 2.25rem,
+    45: 2.8125rem,
+    55: 3.4375rem,
+    60: 3.75rem,
+    70: 4.375rem,
+    85: 5.3125rem,
+);
+$lineheight: (
+    21: 1.3125rem,
+    22: 1.375rem,
+    25: 1.5265rem,
+    30: 1.875rem,
+    40: 2.5rem,
+    46: 2.875rem,
+    50: 3.125rem,
+    53: 3.3125rem,
+    60: 3.75rem,
+    70: 4.375rem,
+    75: 4.6875rem,
+    85: 5.3125rem,
+    95: 5.9375rem,
+);

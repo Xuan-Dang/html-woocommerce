@@ -1,0 +1,22 @@
+@mixin max-width($breakpoint) {
+    @media screen and (max-width: $breakpoint) {
+        @content
+    }
+}
+@mixin generateDot($size, $bacground, $spacing, $columns, $rows) {
+    width: $size;
+    height: $size;
+    background-color: $bacground;
+    border-radius: 100rem;
+    $value: ();
+  
+    @for $i from 0 to $rows {
+      @for $j from 0 to $columns {
+        $x: $i * $spacing + px;
+        $y: $j * $spacing + px;
+        $theShadow: $x $y $bacground;
+        $value: append($value, $theShadow, comma);
+      }
+    }
+    box-shadow: $value;
+  }
